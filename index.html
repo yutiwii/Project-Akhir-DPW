@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nyawitskuy ~ Pengenalan Kelapa Sawit Di Indonesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <span class="header-icon"><img src="image/icon.png" alt="icon"></span>
+      <div>
+        <h1>Nyawitskuy</h1>
+        <p class="header-sub">Pengenalan Kelapa Sawit Di Indonesia</p>
+      </div>
+        <nav>
+          <a href="#pengenalan">Pengenalan</a>
+          <a href="#proses">Proses</a>
+          <a href="#konversi">Konversi</a>
+        </nav>
+    </div>
+  </header>
+
+  <!-- SECTION 1: PENGENALAN -->
+  <section id="pengenalan" class="section">
+    <div class="container">
+      <h2 class="section-title"><img src="image/sawit.png" alt="Sawit" width="50px">Pengenalan Kelapa Sawit</h2>
+      <p class="section-desc">Kelapa sawit adalah salah satu komoditas perkebunan terpenting di Indonesia. Yuk, kenali lebih dalam!</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Apa itu Kelapa Sawit?</h3>
+          <p>Kelapa sawit (<em>Elaeis guineensis</em>) adalah tanaman tropis penghasil minyak nabati terbesar di dunia. Berasal dari Afrika Barat, kini banyak dibudidayakan di Asia Tenggara.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+             <img src="image/wit2.png" alt="Sawit" width="270">
+          </div>
+          <h3>Indonesia & Sawit</h3>
+          <p>Indonesia adalah produsen minyak sawit terbesar di dunia, menyumbang sekitar <strong>55%</strong> dari total produksi global. Luas perkebunan mencapai lebih dari 16 juta hektar.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <img src="image/produk.png" alt="produk" width="270">
+          </div>
+          <h3>Produk Turunan</h3>
+          <p>Dari kelapa sawit dihasilkan minyak goreng, margarin, sabun, kosmetik, hingga bahan bakar nabati (biodiesel). Sangat beragam kegunaannya!</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <img src="image/sjr wit.png" alt="sejara" width="270">
+          </div>
+          <h3>Sejarah Singkat</h3>
+          <p>Kelapa sawit pertama kali masuk ke Indonesia sekitar tahun <strong>1848</strong> di Kebun Raya Bogor. Perkebunan komersial mulai berkembang pada awal abad ke-20.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <img src="image/tumbuh.sawiy.png " alt="cara tumbuh" width="270">
+          </div>
+          <h3>Syarat Tumbuh</h3>
+          <p>Tumbuh optimal di iklim tropis dengan curah hujan 2.000–2.500 mm/tahun, suhu 24–28°C, dan ketinggian 0–500 mdpl. Cocok dengan iklim Indonesia!</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <img src="image/ekonomi wit.png" alt="ekonomi" width="240">
+          </div>
+          <h3>Nilai Ekonomi</h3>
+          <p>Industri sawit menyerap lebih dari <strong>16 juta</strong> tenaga kerja di Indonesia dan menjadi penyumbang devisa ekspor terbesar dalam sektor pertanian.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PROSES (SLIDE INTERAKTIF) -->
+  <section id="proses" class="section section-green">
+    <div class="container">
+      <h2 class="section-title">Proses Pengolahan Sawit Menjadi Minyak</h2>
+      <img src="image/pengolahan.sawit.png" alt="Proses Pengolahan Sawit Menjadi Minya" width="1000px" height="350px">
+      <p class="section-desc">Ikuti perjalanan tandan buah segar (TBS) hingga menjadi minyak sawit siap pakai!</p>
+
+      <div class="slideshow">
+        <div class="slide-display">
+          <div class="slide-number-badge" id="slideNumBadge">1 / 7</div>
+          <div class="slide-content" id="slideContent">
+            <!-- Diisi oleh JS -->
+          </div>
+        </div>
+        <div class="slide-controls">
+          <button class="btn-slide" id="btnPrev" onclick="changeSlide(-1)">&#8592; Sebelumnya</button>
+          <div class="slide-dots" id="slideDots"></div>
+          <button class="btn-slide" id="btnNext" onclick="changeSlide(1)">Berikutnya &#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: KONVERSI -->
+  <section id="konversi" class="section">
+    <div class="container">
+      <h2 class="section-title">Konversi KG Sawit ke Liter Minyak</h2>
+      <p class="section-desc">Masukkan berat buah sawit (TBS) untuk menghitung estimasi hasil minyak yang diperoleh.</p>
+
+      <div class="converter-box">
+        <div class="converter-form">
+          <label for="inputKg">Berat Tandan Buah Segar (TBS)</label>
+          <div class="input-group">
+            <input type="number" id="inputKg" placeholder="Contoh: 1000" min="0" />
+            <span class="input-unit">KG</span>
+          </div>
+
+          <label for="selectJenis">Jenis Minyak</label>
+          <select id="selectJenis">
+            <option value="cpo">CPO – Crude Palm Oil (rendemen ~22%)</option>
+            <option value="pko">PKO – Palm Kernel Oil (rendemen ~4%)</option>
+            <option value="goreng">Minyak Goreng Olahan (rendemen ~18%)</option>
+          </select>
+
+          <button class="btn-hitung" onclick="hitungKonversi()">🔢 Hitung Sekarang</button>
+        </div>
+
+        <div class="converter-result" id="hasilKonversi">
+          <div class="result-placeholder">
+            <span></span>
+            <p>Hasil konversi akan muncul di sini</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-rendemen">
+          <h3>Tabel Rendemen Minyak Sawit</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Jenis Minyak</th>
+              <th>Sumber</th>
+              <th>Rendemen</th>
+              <th>Kegunaan Utama</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CPO (Crude Palm Oil)</td>
+              <td>Daging buah</td>
+              <td>~22%</td>
+              <td>Bahan baku industri pangan & non-pangan</td>
+            </tr>
+            <tr>
+              <td>PKO (Palm Kernel Oil)</td>
+              <td>Inti biji</td>
+              <td>~4%</td>
+              <td>Kosmetik, sabun, deterjen</td>
+            </tr>
+            <tr>
+              <td>Minyak Goreng</td>
+              <td>CPO yang dimurnikan</td>
+              <td>~18%</td>
+              <td>Konsumsi rumah tangga & industri makanan</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note">* Rendemen bersifat estimasi, dapat bervariasi tergantung kualitas TBS dan teknologi pengolahan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><img src="image/icon.png" alt="icon" width="100px"><strong>Nyawitskuy</strong> ~ Edukasi Kelapa Sawit Indonesia</p>
+    <p class="footer-note">Dibuat untuk memenuhi Project Akhir Mata Kuliah DPW | Data berdasarkan referensi pertanian Indonesia</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
