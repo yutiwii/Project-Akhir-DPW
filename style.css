@@ -30,7 +30,9 @@ body {
   line-height: 1.7;
 }
 
-/* -- HEADER -- */
+/* ============================================
+   HEADER
+   ============================================ */
 header {
   background: linear-gradient(135deg, var(--hijau-tua) 0%, var(--hijau-mid) 100%);
   color: var(--putih);
@@ -44,37 +46,47 @@ header {
   display: flex;
   align-items: center;
   padding: 10px 20px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .header-icon {
-  display: inline-block;
-  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .header-icon img {
-  width: 100px;
+  width: 70px;
+  height: auto;
+}
+
+.header-branding {
+  flex: 1;
+  min-width: 0;
 }
 
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 3vw, 2rem);
   font-weight: 900;
   letter-spacing: 1px;
   color: var(--kuning);
   text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  white-space: nowrap;
 }
 
 .header-sub {
-  font-size: 0.92rem;
+  font-size: clamp(0.75rem, 2vw, 0.92rem);
   color: rgba(255,255,255,0.85);
   margin-top: 2px;
 }
 
 nav {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
-  padding-left: 20px;
+  margin-left: auto;
 }
 
 nav a {
@@ -82,10 +94,11 @@ nav a {
   text-decoration: none;
   font-weight: 700;
   font-size: 0.88rem;
-  padding: 6px 16px;
+  padding: 6px 14px;
   border-radius: 20px;
   border: 2px solid rgba(255,255,255,0.3);
   transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -94,9 +107,11 @@ nav a:hover {
   border-color: var(--kuning);
 }
 
-/* -- SECTION -- */
+/* ============================================
+   SECTION
+   ============================================ */
 .section {
-  padding: 64px 16px;
+  padding: clamp(32px, 6vw, 64px) 16px;
 }
 
 .section-green {
@@ -106,32 +121,56 @@ nav a:hover {
 .container {
   max-width: 1000px;
   margin: 0 auto;
+  width: 100%;
 }
 
-.container img{
+.container img {
   border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Gambar proses pengolahan — responsif penuh */
+.container > img,
+.section-green .container > img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 1000px;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 4vw, 3rem);
   color: var(--hijau-tua);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
 }
-.section-title img{
-  margin-right: 20px;
+
+.section-title img {
+  width: clamp(32px, 5vw, 50px) !important;
+  height: auto !important;
+  margin-right: 0;
+  flex-shrink: 0;
 }
 
 .section-desc {
   color: var(--abu-teks);
-  font-size: 1rem;
+  font-size: clamp(0.88rem, 2vw, 1rem);
   margin-bottom: 36px;
   max-width: 620px;
 }
 
-/* -- KARTU PENGENALAN -- */
+/* ============================================
+   KARTU PENGENALAN
+   ============================================ */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 20px;
 }
 
@@ -155,6 +194,14 @@ nav a:hover {
   border-radius: 5px;
 }
 
+/* Gambar di dalam card selalu responsif */
+.card-icon img {
+  width: 100% !important;
+  max-width: 270px;
+  height: auto !important;
+  display: block;
+}
+
 .card h3 {
   font-size: 1.05rem;
   color: var(--hijau-tua);
@@ -167,7 +214,9 @@ nav a:hover {
   color: var(--abu-teks);
 }
 
-/* -- SLIDESHOW -- */
+/* ============================================
+   SLIDESHOW
+   ============================================ */
 .slideshow {
   background: var(--putih);
   border-radius: var(--radius);
@@ -176,8 +225,8 @@ nav a:hover {
 }
 
 .slide-display {
-  padding: 36px 36px 28px;
-  min-height: 280px;
+  padding: clamp(20px, 4vw, 36px);
+  min-height: 260px;
   position: relative;
 }
 
@@ -203,21 +252,21 @@ nav a:hover {
 }
 
 .slide-emoji {
-  font-size: 3.2rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
   margin-bottom: 14px;
   display: block;
 }
 
 .slide-content h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.45rem;
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
   color: var(--hijau-tua);
   margin-bottom: 12px;
 }
 
 .slide-content p {
   color: var(--abu-teks);
-  font-size: 0.97rem;
+  font-size: clamp(0.85rem, 2vw, 0.97rem);
   max-width: 680px;
 }
 
@@ -237,22 +286,25 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 28px;
+  padding: 14px 20px;
   background: var(--abu-muda);
   border-top: 1px solid #e0e8e0;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn-slide {
   background: var(--hijau-mid);
   color: var(--putih);
   border: none;
-  padding: 10px 22px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-family: 'Nunito', sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(0.82rem, 2vw, 0.9rem);
   font-weight: 700;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
+  flex-shrink: 0;
 }
 
 .btn-slide:hover {
@@ -269,6 +321,8 @@ nav a:hover {
 .slide-dots {
   display: flex;
   gap: 7px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .dot {
@@ -278,6 +332,7 @@ nav a:hover {
   background: #c0d8c0;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
 }
 
 .dot.active {
@@ -285,16 +340,14 @@ nav a:hover {
   transform: scale(1.3);
 }
 
-/* -- KONVERTER -- */
+/* ============================================
+   KONVERTER
+   ============================================ */
 .converter-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-bottom: 40px;
-}
-
-@media (max-width: 680px) {
-  .converter-box { grid-template-columns: 1fr; }
 }
 
 .converter-form {
@@ -323,6 +376,7 @@ nav a:hover {
 
 .input-group input {
   flex: 1;
+  min-width: 0;
   border: none;
   padding: 10px 14px;
   font-family: 'Nunito', sans-serif;
@@ -336,6 +390,7 @@ nav a:hover {
   padding: 10px 14px;
   font-weight: 700;
   font-size: 0.88rem;
+  white-space: nowrap;
 }
 
 .converter-form select {
@@ -348,6 +403,7 @@ nav a:hover {
   color: var(--teks-gelap);
   outline: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .btn-hitung {
@@ -406,6 +462,8 @@ nav a:hover {
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px dashed #ddd;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .result-row:last-child { border-bottom: none; }
@@ -416,17 +474,20 @@ nav a:hover {
 }
 
 .result-value {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--hijau-tua);
+  text-align: right;
 }
 
 .result-value.big {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--hijau-mid);
 }
 
-/* -- TABEL RENDEMEN -- */
+/* ============================================
+   TABEL RENDEMEN
+   ============================================ */
 .info-rendemen {
   background: var(--putih);
   border-radius: var(--radius);
@@ -440,10 +501,17 @@ nav a:hover {
   margin-bottom: 16px;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
+  min-width: 480px;
 }
 
 th {
@@ -451,6 +519,7 @@ th {
   color: var(--putih);
   padding: 10px 14px;
   text-align: left;
+  white-space: nowrap;
 }
 
 td {
@@ -468,129 +537,92 @@ tr:hover td { background: #e0f0e8; }
   font-style: italic;
 }
 
-/* -- FOOTER -- */
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
   background: var(--hijau-tua);
   color: rgba(255,255,255,0.85);
   text-align: center;
-  padding: 28px 16px;
+  padding: clamp(20px, 4vw, 28px) 16px;
 }
 
 footer strong { color: var(--kuning); }
 
 footer p {
   margin: 4px 0;
+  font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
 footer img {
-  width: 60px;
+  width: clamp(40px, 8vw, 60px);
+  height: auto;
   display: block;
   margin: 0 auto 8px;
 }
 
 .footer-note {
-  font-size: 0.82rem;
+  font-size: clamp(0.72rem, 1.8vw, 0.82rem);
   margin-top: 6px;
   color: rgba(255,255,255,0.55);
 }
 
-/* -- RESPONSIVE -- */
-@media (max-width: 600px) {
-  header h1 { font-size: 1.4rem; }
-  .section-title { font-size: 1.45rem; }
-  .slide-display { padding: 24px 18px 20px; }
-  .slide-controls { flex-direction: column; gap: 12px; }
-}
-
 /* ============================================
-   RESPONSIVE - TABLET (max 900px)
+   RESPONSIVE — TABLET (max 900px)
    ============================================ */
 @media (max-width: 900px) {
   .header-inner {
-    flex-wrap: wrap;
-    gap: 8px;
     padding: 10px 16px;
   }
 
   nav {
-    padding-left: 0;
+    margin-left: 0;
     width: 100%;
-    justify-content: center;
-  }
-
-  .section-title {
-    font-size: 2rem;
+    justify-content: flex-start;
   }
 
   .card-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
-
-  .container > img[width="1000px"] {
-    width: 100% !important;
-    height: auto !important;
-  }
 }
 
 /* ============================================
-   RESPONSIVE - HP (max 600px)
+   RESPONSIVE — HP (max 600px)
    ============================================ */
 @media (max-width: 600px) {
 
   /* HEADER */
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 14px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 14px;
     gap: 8px;
   }
 
   .header-icon img {
-    width: 60px;
-  }
-
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  .header-sub {
-    font-size: 0.8rem;
+    width: 50px;
   }
 
   nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding-left: 0;
     width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-left: 0;
   }
 
   nav a {
-    font-size: 0.8rem;
-    padding: 5px 12px;
+    font-size: 0.78rem;
+    padding: 5px 11px;
   }
 
   /* SECTION */
   .section {
-    padding: 36px 14px;
-  }
-
-  .section-title {
-    font-size: 1.45rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .section-title img {
-    width: 36px !important;
-    margin-right: 0;
+    padding: 32px 14px;
   }
 
   .section-desc {
-    font-size: 0.92rem;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   /* KARTU */
@@ -603,26 +635,9 @@ footer img {
     padding: 18px 16px;
   }
 
-  .card-icon img {
-    width: 100% !important;
-    height: auto;
-  }
-
-  /* GAMBAR PROSES */
-  .container > img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100%;
-  }
-
   /* SLIDESHOW */
-  .slideshow {
-    border-radius: 10px;
-  }
-
   .slide-display {
-    padding: 20px 16px 16px;
-    min-height: 220px;
+    min-height: 200px;
   }
 
   .slide-number-badge {
@@ -632,38 +647,27 @@ footer img {
     right: 12px;
   }
 
-  .slide-emoji {
-    font-size: 2.4rem;
-  }
-
-  .slide-content h3 {
-    font-size: 1.15rem;
-  }
-
-  .slide-content p {
-    font-size: 0.88rem;
-  }
-
   .slide-controls {
     flex-direction: column;
-    gap: 10px;
-    padding: 14px 16px;
+    align-items: stretch;
+    padding: 14px;
   }
 
   .slide-dots {
     order: -1;
+    justify-content: center;
   }
 
   .btn-slide {
     width: 100%;
-    padding: 10px;
-    font-size: 0.88rem;
+    text-align: center;
   }
 
   /* KONVERTER */
   .converter-box {
     grid-template-columns: 1fr;
     gap: 16px;
+    margin-bottom: 24px;
   }
 
   .converter-form {
@@ -672,40 +676,46 @@ footer img {
 
   .converter-result {
     padding: 20px 16px;
-    min-height: 160px;
+    min-height: 140px;
   }
 
   .btn-hitung {
     font-size: 0.95rem;
-    padding: 11px;
   }
 
   /* TABEL */
   .info-rendemen {
     padding: 20px 14px;
-    overflow-x: auto;
   }
 
   table {
     font-size: 0.82rem;
-    min-width: 480px;
   }
 
   th, td {
     padding: 8px 10px;
   }
+}
 
-  /* FOOTER */
-  footer {
-    padding: 24px 14px;
-    font-size: 0.88rem;
+/* ============================================
+   RESPONSIVE — KECIL SEKALI (max 400px)
+   ============================================ */
+@media (max-width: 400px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  footer img {
-    width: 48px;
+  nav a {
+    font-size: 0.75rem;
+    padding: 5px 10px;
   }
 
-  .footer-note {
-    font-size: 0.76rem;
+  .result-value {
+    font-size: 0.95rem;
+  }
+
+  .result-value.big {
+    font-size: 1.2rem;
   }
 }
